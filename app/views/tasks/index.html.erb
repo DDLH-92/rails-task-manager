@@ -2,10 +2,10 @@
 <div class="card" style="width: 18rem;">
 <ul class="list-group list-group-flush">
   <% @tasks.each do |task| %>
-    <li><input type = 'checkbox'><%= link_to task.title, task_path(task.id) %> - <button type="button" class="btn btn-outline-danger"><%= link_to "Delete",
+    <li><input type = 'checkbox'><%= link_to task.title, task_path(task.id) %> - <%= link_to '<i class="fa-solid fa-trash"></i></i>'.html_safe,
   task_path(task),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%></li></button>
+%></li>
   <% end %>
 </ul>
 </div>
